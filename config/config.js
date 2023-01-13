@@ -1,9 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+console.log(process.env.DATABASE_HOST);
+console.log(process.env.DATABASE_PASSWORD);
+
 export const config = {
   development: {
     username: "root",
-    password: "shere12345!",
+    password: process.env.DATABASE_PASSWORD,
     database: "sequelize-test",
-    host: "mysql-wsl.cy2zc1vkzrge.us-west-2.rds.amazonaws.com",
+    host: process.env.DATABASE_HOST,
     dialect: "mysql",
   },
   test: {
